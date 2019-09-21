@@ -27,6 +27,19 @@
                     ]
                 },
                 {
+                    "atomType": "Constant",
+                    "name": "Constant",
+                    "x": 317,
+                    "y": 195,
+                    "uniqueID": 847478,
+                    "ioValues": [
+                        {
+                            "name": "number",
+                            "ioValue": 10
+                        }
+                    ]
+                },
+                {
                     "atomType": "Extrude",
                     "name": "Extrude",
                     "x": 426,
@@ -42,11 +55,20 @@
                 {
                     "atomType": "Code",
                     "name": "Code",
-                    "x": 547,
-                    "y": 192,
+                    "x": 585,
+                    "y": 186,
                     "uniqueID": 510707,
-                    "ioValues": [],
-                    "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(geometry, radius, number){\n  console.log(\"geometry: \")\n  console.log(geometry)\n  return Sphere(40)        //return must be geometry;\n}\n\nmain(inputs.geometry, inputs.radius, inputs.number)"
+                    "ioValues": [
+                        {
+                            "name": "radius",
+                            "ioValue": 10
+                        },
+                        {
+                            "name": "number",
+                            "ioValue": 10
+                        }
+                    ],
+                    "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(geometry, radius, number){\n  console.log(\"radius: \")\n  console.log(radius)\n  return Sphere(40)        //return must be geometry;\n}\n\nmain(inputs.geometry, inputs.radius, inputs.number)"
                 },
                 {
                     "atomType": "Output",
@@ -62,6 +84,18 @@
                     "ap2Name": "geometry",
                     "ap1ID": 978760,
                     "ap2ID": 616323
+                },
+                {
+                    "ap1Name": "number",
+                    "ap2Name": "radius",
+                    "ap1ID": 847478,
+                    "ap2ID": 510707
+                },
+                {
+                    "ap1Name": "number",
+                    "ap2Name": "number",
+                    "ap1ID": 847478,
+                    "ap2ID": 510707
                 },
                 {
                     "ap1Name": "geometry",

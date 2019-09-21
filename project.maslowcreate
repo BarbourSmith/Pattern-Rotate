@@ -28,10 +28,23 @@
                 },
                 {
                     "atomType": "Constant",
-                    "name": "Constant",
-                    "x": 317,
-                    "y": 195,
+                    "name": "Number",
+                    "x": 306,
+                    "y": 153,
                     "uniqueID": 847478,
+                    "ioValues": [
+                        {
+                            "name": "number",
+                            "ioValue": 4
+                        }
+                    ]
+                },
+                {
+                    "atomType": "Constant",
+                    "name": "Radius",
+                    "x": 280,
+                    "y": 213,
+                    "uniqueID": 905184,
                     "ioValues": [
                         {
                             "name": "number",
@@ -55,8 +68,8 @@
                 {
                     "atomType": "Code",
                     "name": "Code",
-                    "x": 585,
-                    "y": 186,
+                    "x": 473,
+                    "y": 187,
                     "uniqueID": 510707,
                     "ioValues": [
                         {
@@ -65,10 +78,10 @@
                         },
                         {
                             "name": "number",
-                            "ioValue": 10
+                            "ioValue": 4
                         }
                     ],
-                    "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(geometry, radius, number){\n  console.log(\"radius: \")\n  console.log(radius)\n  return Sphere(40)        //return must be geometry;\n}\n\nmain(inputs.geometry, inputs.radius, inputs.number)"
+                    "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(geometry, radius, number){\n  console.log(\"radius: \");\n  console.log(radius);\n  \n  var parts = []\n  var i = 0;\n  while(i < number){\n    console.log(\"it ran\");\n    i++;\n    parts.push(geometry.rotateZ(20))\n  }\n  \n  \n  console.log(parts)\n  console.log(union(Sphere(5),Cube(4) ))\n  \n  return Sphere(5);        //return must be geometry;\n}\n\nmain(inputs.geometry, inputs.radius, inputs.number)"
                 },
                 {
                     "atomType": "Output",
@@ -87,14 +100,14 @@
                 },
                 {
                     "ap1Name": "number",
-                    "ap2Name": "radius",
+                    "ap2Name": "number",
                     "ap1ID": 847478,
                     "ap2ID": 510707
                 },
                 {
                     "ap1Name": "number",
-                    "ap2Name": "number",
-                    "ap1ID": 847478,
+                    "ap2Name": "radius",
+                    "ap1ID": 905184,
                     "ap2ID": 510707
                 },
                 {

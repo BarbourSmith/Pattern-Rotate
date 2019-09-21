@@ -10,6 +10,45 @@
             "topLevel": true,
             "allAtoms": [
                 {
+                    "atomType": "Rectangle",
+                    "name": "Rectangle",
+                    "x": 134,
+                    "y": 91,
+                    "uniqueID": 978760,
+                    "ioValues": [
+                        {
+                            "name": "x length",
+                            "ioValue": 10
+                        },
+                        {
+                            "name": "y length",
+                            "ioValue": 10
+                        }
+                    ]
+                },
+                {
+                    "atomType": "Extrude",
+                    "name": "Extrude",
+                    "x": 426,
+                    "y": 63,
+                    "uniqueID": 616323,
+                    "ioValues": [
+                        {
+                            "name": "height",
+                            "ioValue": 10
+                        }
+                    ]
+                },
+                {
+                    "atomType": "Code",
+                    "name": "Code",
+                    "x": 547,
+                    "y": 192,
+                    "uniqueID": 510707,
+                    "ioValues": [],
+                    "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(geometry, radius, number){\n  console.log(\"geometry: \")\n  console.log(geometry)\n  return Sphere(40)        //return must be geometry;\n}\n\nmain(inputs.geometry, inputs.radius, inputs.number)"
+                },
+                {
                     "atomType": "Output",
                     "name": "Output",
                     "x": 954,
@@ -17,7 +56,25 @@
                     "ioValues": []
                 }
             ],
-            "allConnectors": [],
+            "allConnectors": [
+                {
+                    "ap1Name": "geometry",
+                    "ap2Name": "geometry",
+                    "ap1ID": 978760,
+                    "ap2ID": 616323
+                },
+                {
+                    "ap1Name": "geometry",
+                    "ap2Name": "number or geometry",
+                    "ap1ID": 616323
+                },
+                {
+                    "ap1Name": "geometry",
+                    "ap2Name": "geometry",
+                    "ap1ID": 616323,
+                    "ap2ID": 510707
+                }
+            ],
             "fileTypeVersion": 1
         }
     ],

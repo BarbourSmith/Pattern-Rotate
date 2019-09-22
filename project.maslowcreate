@@ -6,82 +6,67 @@
             "x": 0,
             "y": 0,
             "uniqueID": 496728,
-            "ioValues": [],
+            "ioValues": [
+                {
+                    "name": "Number",
+                    "ioValue": 10
+                },
+                {
+                    "name": "Radius",
+                    "ioValue": 10
+                },
+                {
+                    "name": "Geometry",
+                    "ioValue": 10
+                }
+            ],
             "topLevel": true,
             "allAtoms": [
                 {
-                    "atomType": "Rectangle",
-                    "name": "Rectangle",
-                    "x": 134,
-                    "y": 91,
-                    "uniqueID": 978760,
-                    "ioValues": [
-                        {
-                            "name": "x length",
-                            "ioValue": 10
-                        },
-                        {
-                            "name": "y length",
-                            "ioValue": 10
-                        }
-                    ]
+                    "atomType": "Input",
+                    "name": "Geometry",
+                    "x": 48,
+                    "y": 35,
+                    "uniqueID": 138018,
+                    "ioValues": []
                 },
                 {
-                    "atomType": "Constant",
-                    "name": "Number",
-                    "x": 306,
-                    "y": 153,
-                    "uniqueID": 847478,
-                    "ioValues": [
-                        {
-                            "name": "number",
-                            "ioValue": 4
-                        }
-                    ]
-                },
-                {
-                    "atomType": "Constant",
+                    "atomType": "Input",
                     "name": "Radius",
-                    "x": 280,
-                    "y": 213,
-                    "uniqueID": 905184,
-                    "ioValues": [
-                        {
-                            "name": "number",
-                            "ioValue": 10
-                        }
-                    ]
+                    "x": 46,
+                    "y": 154,
+                    "uniqueID": 601701,
+                    "ioValues": []
                 },
                 {
-                    "atomType": "Extrude",
-                    "name": "Extrude",
-                    "x": 426,
-                    "y": 63,
-                    "uniqueID": 616323,
-                    "ioValues": [
-                        {
-                            "name": "height",
-                            "ioValue": 10
-                        }
-                    ]
+                    "atomType": "Input",
+                    "name": "Number",
+                    "x": 47,
+                    "y": 266,
+                    "uniqueID": 403752,
+                    "ioValues": []
                 },
                 {
                     "atomType": "Code",
                     "name": "Code",
-                    "x": 530,
-                    "y": 194,
+                    "x": 552,
+                    "y": 157,
                     "uniqueID": 510707,
                     "ioValues": [
+                        {
+                            "name": "geometry",
+                            "ioValue": 10
+                        },
                         {
                             "name": "radius",
                             "ioValue": 10
                         },
                         {
                             "name": "number",
-                            "ioValue": 4
+                            "ioValue": 10
                         }
                     ],
-                    "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(geometry, radius, number){\n  console.log(\"radius: \");\n  console.log(radius);\n  \n  var parts = []\n  var i = 0;\n  while(i < number){\n    console.log(\"it ran\");\n    i++;\n    parts.push(geometry.rotateZ(20))\n  }\n  \n  \n  console.log(parts)\n  console.log(union(Sphere(5),Cube(4) ))\n  \n  return Sphere(5);        //return must be geometry;\n}\n\nreturn main(geometry, radius, number)"
+                    "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(geometry, radius, number){\n  \n  const angleBetweenParts = 360.0/number\n  \n  var parts = []\n  var i = 0;\n  while(i < number){\n    console.log(\"it ran\");\n    i++;\n    parts.push(geometry.translate(radius).rotateZ(angleBetweenParts*i))\n  }\n  \n  return union(...parts);        //return must be geometry;\n}\n\nreturn main(geometry, radius, number)"
                 },
                 {
                     "atomType": "Output",
@@ -93,33 +78,27 @@
             ],
             "allConnectors": [
                 {
-                    "ap1Name": "geometry",
+                    "ap1Name": "number or geometry",
                     "ap2Name": "geometry",
-                    "ap1ID": 978760,
-                    "ap2ID": 616323
-                },
-                {
-                    "ap1Name": "number",
-                    "ap2Name": "number",
-                    "ap1ID": 847478,
+                    "ap1ID": 138018,
                     "ap2ID": 510707
                 },
                 {
-                    "ap1Name": "number",
+                    "ap1Name": "number or geometry",
                     "ap2Name": "radius",
-                    "ap1ID": 905184,
+                    "ap1ID": 601701,
+                    "ap2ID": 510707
+                },
+                {
+                    "ap1Name": "number or geometry",
+                    "ap2Name": "number",
+                    "ap1ID": 403752,
                     "ap2ID": 510707
                 },
                 {
                     "ap1Name": "geometry",
                     "ap2Name": "number or geometry",
-                    "ap1ID": 616323
-                },
-                {
-                    "ap1Name": "geometry",
-                    "ap2Name": "geometry",
-                    "ap1ID": 616323,
-                    "ap2ID": 510707
+                    "ap1ID": 510707
                 }
             ],
             "fileTypeVersion": 1

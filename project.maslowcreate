@@ -68,8 +68,8 @@
                 {
                     "atomType": "Code",
                     "name": "Code",
-                    "x": 473,
-                    "y": 187,
+                    "x": 530,
+                    "y": 194,
                     "uniqueID": 510707,
                     "ioValues": [
                         {
@@ -81,7 +81,7 @@
                             "ioValue": 4
                         }
                     ],
-                    "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(geometry, radius, number){\n  console.log(\"radius: \");\n  console.log(radius);\n  \n  var parts = []\n  var i = 0;\n  while(i < number){\n    console.log(\"it ran\");\n    i++;\n    parts.push(geometry.rotateZ(20))\n  }\n  \n  \n  console.log(parts)\n  console.log(union(Sphere(5),Cube(4) ))\n  \n  return Sphere(5);        //return must be geometry;\n}\n\nmain(inputs.geometry, inputs.radius, inputs.number)"
+                    "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(geometry, radius, number){\n  console.log(\"radius: \");\n  console.log(radius);\n  \n  var parts = []\n  var i = 0;\n  while(i < number){\n    console.log(\"it ran\");\n    i++;\n    parts.push(geometry.rotateZ(20))\n  }\n  \n  \n  console.log(parts)\n  console.log(union(Sphere(5),Cube(4) ))\n  \n  return Sphere(5);        //return must be geometry;\n}\n\nreturn main(geometry, radius, number)"
                 },
                 {
                     "atomType": "Output",

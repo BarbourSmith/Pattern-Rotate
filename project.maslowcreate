@@ -8,7 +8,7 @@
             "uniqueID": 496728,
             "ioValues": [
                 {
-                    "name": "Number",
+                    "name": "Geometry",
                     "ioValue": 10
                 },
                 {
@@ -16,7 +16,7 @@
                     "ioValue": 10
                 },
                 {
-                    "name": "Geometry",
+                    "name": "Number",
                     "ioValue": 10
                 }
             ],
@@ -66,7 +66,7 @@
                             "ioValue": 10
                         }
                     ],
-                    "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(geometry, radius, number){\n  \n  const angleBetweenParts = 360.0/number\n  \n  var parts = []\n  var i = 0;\n  while(i < number){\n    console.log(\"it ran\");\n    i++;\n    parts.push(geometry.translate(radius).rotateZ(angleBetweenParts*i))\n  }\n  \n  return union(...parts);        //return must be geometry;\n}\n\nreturn main(geometry, radius, number)"
+                    "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(geometry, radius, number){\n  \n  const angleBetweenParts = 360.0/number\n  \n  var parts = []\n  var i = 0;\n  while(i < number){\n    i++;\n    parts.push(geometry.translate(radius).rotateZ(angleBetweenParts*i))\n  }\n  \n  return union(...parts);        //return must be geometry;\n}\n\nreturn main(geometry, radius, number)"
                 },
                 {
                     "atomType": "Output",
